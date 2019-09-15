@@ -63,6 +63,7 @@ public class Tgs2Ctrl {
                 reader = new BufferedReader(new FileReader(loadFile.getSelectedFile()));
                 String data = null;
                 doc.insertString(0, "", null);
+                view.getjTextPane1().setText("");
                 while ((data = reader.readLine()) != null) {
                     doc.insertString(doc.getLength(), data + "\n", null);
                 }
@@ -77,6 +78,7 @@ public class Tgs2Ctrl {
                 if (reader != null) {
                     try {
                         reader.close();
+                        JOptionPane.showMessageDialog(null, "Load File Success.", "Informasi", JOptionPane.INFORMATION_MESSAGE);
 
                     } catch (IOException ex) {
                         Logger.getLogger(Tgs2Ctrl.class

@@ -56,6 +56,7 @@ public class Tgs1Ctrl {
                 reader = new BufferedReader(new FileReader(loadFile.getSelectedFile()));
                 String data = null;
                 doc.insertString(0, "", null);
+                view.getjTextPane1().setText("");
                 while ((data = reader.readLine()) != null) {
                     doc.insertString(doc.getLength(), data + "\n", null);
                 }
