@@ -64,9 +64,6 @@ public class Tgs1Ctrl {
             } catch (IOException | BadLocationException ex) {
                 Logger.getLogger(Tgs1Ctrl.class.getName()).log(Level.SEVERE, null, ex);
             } finally {
-//                if (inputStream != null) {
-//                    try {
-//                        inputStream.close();
                 if (reader != null) {
                     try {
                         reader.close();
