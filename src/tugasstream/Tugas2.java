@@ -42,7 +42,7 @@ public class Tugas2 extends javax.swing.JFrame {
         saveBut = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Converter");
+        setTitle("Tugas Stream");
 
         jLabel1.setFont(new java.awt.Font("Montserrat Alternates Black", 0, 30)); // NOI18N
         jLabel1.setText("Tugas 2 Stream");

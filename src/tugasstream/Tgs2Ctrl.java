@@ -23,6 +23,7 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JFileChooser;
+import javax.swing.JOptionPane;
 import javax.swing.text.BadLocationException;
 import javax.swing.text.StyledDocument;
 
@@ -66,15 +67,20 @@ public class Tgs2Ctrl {
                     doc.insertString(doc.getLength(), data + "\n", null);
                 }
             } catch (FileNotFoundException ex) {
-                Logger.getLogger(Tgs2Ctrl.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(Tgs2Ctrl.class
+                        .getName()).log(Level.SEVERE, null, ex);
+
             } catch (IOException | BadLocationException ex) {
-                Logger.getLogger(Tgs2Ctrl.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(Tgs2Ctrl.class
+                        .getName()).log(Level.SEVERE, null, ex);
             } finally {
                 if (reader != null) {
                     try {
                         reader.close();
+
                     } catch (IOException ex) {
-                        Logger.getLogger(Tgs2Ctrl.class.getName()).log(Level.SEVERE, null, ex);
+                        Logger.getLogger(Tgs2Ctrl.class
+                                .getName()).log(Level.SEVERE, null, ex);
                     }
                 }
             }
@@ -90,19 +96,26 @@ public class Tgs2Ctrl {
                 if (contents != null && !contents.isEmpty()) {
                     writer = new BufferedWriter(new FileWriter(loadFile.getSelectedFile()));
                     writer.write(contents);
+                    JOptionPane.showMessageDialog(null, "Data anda berhasil tersimpan.", "Informasi", JOptionPane.INFORMATION_MESSAGE);
+
                 }
             } catch (FileNotFoundException ex) {
-                Logger.getLogger(Tgs2Ctrl.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(Tgs2Ctrl.class
+                        .getName()).log(Level.SEVERE, null, ex);
+
             } catch (IOException ex) {
-                Logger.getLogger(Tgs2Ctrl.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(Tgs2Ctrl.class
+                        .getName()).log(Level.SEVERE, null, ex);
             } finally {
                 if (writer != null) {
                     try {
                         writer.flush();
                         writer.close();
                         view.getjTextPane1().setText("");
+
                     } catch (IOException ex) {
-                        Logger.getLogger(Tgs2Ctrl.class.getName()).log(Level.SEVERE, null, ex);
+                        Logger.getLogger(Tgs2Ctrl.class
+                                .getName()).log(Level.SEVERE, null, ex);
                     }
                 }
             }
