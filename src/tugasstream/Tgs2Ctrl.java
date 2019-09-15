@@ -52,6 +52,12 @@ public class Tgs2Ctrl {
                 save();
             }
         });
+        this.view.getExBut().addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                exit();
+            }
+        });
     }
 
     private void proses() {
@@ -121,6 +127,14 @@ public class Tgs2Ctrl {
                     }
                 }
             }
+        }
+    }
+    
+    private void exit(){
+        int selectedOption = JOptionPane.showConfirmDialog(null,
+                "Apakah anda yakin akan menutup system?", "Close", JOptionPane.YES_NO_OPTION, JOptionPane.WARNING_MESSAGE);
+        if (selectedOption == JOptionPane.YES_OPTION) {
+            System.exit(0);
         }
     }
 }
